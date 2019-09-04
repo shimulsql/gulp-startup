@@ -1,0 +1,4 @@
+@function border($size, $color){
+    $result: $size + px solid $color;
+    @return $result;
+}

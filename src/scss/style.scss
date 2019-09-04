@@ -1,0 +1,130 @@
+@import 'variables', 'function', 'animation';
+
+
+body{
+    font-family: 'Roboto';
+}
+
+.startup-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.startup{
+    border: border(1, $sweetred);
+    border-radius: 4px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    position: relative;
+
+    h3{
+        color: rgb(36, 36, 36);
+        text-align: center;
+        text-transform: uppercase;
+    }
+    p{
+        margin-top: 5px;
+        color: rgb(95, 95, 95);
+        text-align: center;
+        text-transform: capitalize;
+        font-family: $titi
+    }
+    i{
+        color: $sweetred;
+        text-align: center;
+        font-size: 50px;
+        display: block;
+    }
+    .version{
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        height: 30px;
+        width: 30px;
+        background-color: $sweetred;
+        border-radius: 50%;
+        text-align: center;
+        color: #fff;
+        font-size: 12px;
+        line-height: 1.9rem;
+        border: 8px solid #fff;
+        box-sizing: content-box;
+    }
+}
+.social{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    a{
+        overflow: hidden;
+        width: 35px;
+        height: 35px;
+        margin-left: 1px;
+
+        .git-default, .git-hover{
+            text-decoration: none;
+            font-size: 35px;
+            transition: all .3s;
+        }
+        .git-default{
+            color: $matblack;
+        }
+        .git-hover{
+            color: $sweetred;
+        }
+        
+        &:hover{
+            .git-default{
+                transform:translateY(-40px);
+            }
+            .git-hover{
+                transform:translateY(-37px);
+            }
+        }
+    }
+}
+
+
+// packages slider
+.deps{
+    width: 100%;
+    height: 30vh;
+    padding-bottom: 20px;
+    .slick-track{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .slick-list{
+        padding-bottom: 5px;
+    }
+    .slick-slide{
+        position: relative;
+        margin: 0 10px;
+        background-color: rgb(207, 207, 207);
+        width: 4% !important;
+        padding: 1px;
+        &:hover{
+            &::after{
+                animation: shake .7s;
+            }
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            width: 30%;
+            height: 5px;
+            background-color: #575757;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+        img{
+            width: 100%;
+        }
+    }
+    .slick-prev,.slick-next{
+        display: none!important;
+    }
+}
